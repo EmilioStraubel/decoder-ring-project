@@ -28,22 +28,7 @@ const substitutionModule = (function () {
     let lowerCaseInput = input.toLowerCase().split('')                 //taking input passed into function and making it all lowercase so that we don't have to worry about capital letters.//Splitting our lowerCaseInput to loop over it. Creates an array of individual characters. 
     
     
-    //OLD CODE
-    // const results = []                                                    //create empty array for results
-    // if (encode === true){                                                //if we are encoding.
-    //   for (let i = 0; i < lowerCaseInput.length; i++){                   //loop through each character in the string
-    //     results.push(altAbc[abc.indexOf(lowerCaseInput[i])]);            //push the character in altAbc into our empty results array. Looks at each character in lowerCaseInput string. Then, finds the index of each character in the abc string. Then, takes that index #, and finds the matching character in altAbc at that index number. 
-    //   }
-    // } 
-    //else {                                                                //if we are decoding.         
-    //   for (let i = 0; i < lowerCaseInput.length; i++){                   //loop through each character in the string
-    //     results.push(abc[altAbc.indexOf(lowerCaseInput[i])]);            //push the character in abc into our empty results array. Looks at each character in lowerCaseInput string. Then, finds the index of each character in the altAbc string. Then, takes that index #, and finds the matching character in abc at that index number. 
-    //   }
-    // }
-    // return results.join("");                                             //using .join on results array to concatenate all elements in array.
-    
-
-    //NEW VERSION
+   
     if (encode === true) {                                //if we are encoding
      return lowerCaseInput.map((letter) => {             //We map over array of letters to create new array with results of the callback fn
         return altAbc[abc.indexOf(letter)]               //Accessing altAbc array(ie: if altAbc = xoyqmcgrukswaflnthdjpzibev, then altAbc[0] is "x". Returning the element in altAbc array at the position of the index of the letter in the abc array.
