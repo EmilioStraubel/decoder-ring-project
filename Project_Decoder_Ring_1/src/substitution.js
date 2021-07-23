@@ -7,14 +7,17 @@ const substitutionModule = (function () {
   // you can add any code you want within this function scope
 
   function substitution(input, alphabet, encode = true) {
-    
-    if (!alphabet) return false;                                         //if there is no alphabet passed in, return false
-    if(alphabet.length !== 26) return false;                             //if the length of the alphabet passed in is greater than or less than 26, return false
+//if there is no alphabet passed in, return false
+    if (!alphabet) return false;
+    //if the length of the alphabet passed in is greater than or less than 26, return false    
+    if(alphabet.length !== 26) return false;                             
 
-
-    const duplicate = []                                               //create empty array to hold letters in alphabet
-    for(let character in alphabet) {                                   //using for in to loop through each character in the alphabet string
-      if(duplicate.indexOf(alphabet[character]) < 0) {                 //looking at duplicate array. If the character is not present in the array, this will return an index of -1. If so, then push this letter into array.
+//create empty array to hold letters in alphabet    
+    const duplicate = []  
+    //using for in to loop through each character in the alphabet string    
+    for(let character in alphabet) {
+//looking at duplicate array. If the character is not present in the array, this will return an index of -1. If so, then push this letter into array.
+      if(duplicate.indexOf(alphabet[character]) < 0) {               
         duplicate.push(alphabet[character])
       }
       else {                                                            //if the indexOf returns a value that is > -1 (meaning that the letter is already present and thus a duplicate), return false.
